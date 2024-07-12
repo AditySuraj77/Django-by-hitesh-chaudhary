@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}   
+    Add Recipes
+{% endblock %}
+
+
+{% block content %}
+    <br>
+    <div class='container'>
+        <h1>Add Recipes</h1>
+    </div>
+
+    <br>
+<form class='container' method='post' enctype='multipart/form-data'>
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="exampleInputEmail1">Recipe Name</label>
+      <input name='recipe_name' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Descriptions</label>
+      <input name='recipe_desc' type="text" class="form-control" id="exampleInputPassword1" placeholder="Descriptions">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Upload Image</label>
+        <input name='recipe_img' type="file" class="form-control" id="exampleInputPassword1">
+    </div>
+   
+    <button type="submit" class="btn btn-success">Add</button>
+  </form>
+      <div class="container"><a href="{% url "Display_Recipes"%}" class="btn btn-primary mt-1">Back</a></div>
+  
+
+{% endblock %}

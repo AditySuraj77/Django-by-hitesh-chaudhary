@@ -1,0 +1,9 @@
+body{
+    background-color: rgb(47, 38, 104);
+    color: aliceblue;
+}
+
+h1{
+    align-items: center;
+    font-weight: bold;
+}

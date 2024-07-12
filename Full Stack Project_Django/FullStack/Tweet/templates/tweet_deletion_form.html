@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+{% if form.instance.pk %} Create {% else %} Delete{% endif %}
+{% endblock %}
+
+
+{% block content %}
+    <h1 class='text-center'>
+        Are Sure to Delete Tweet !
+    </h1>
+    <hr>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a href="{% url "tweet_list" %}" class="badge badge-warning">Back</a>
+    </form>
+    
+{% endblock %}

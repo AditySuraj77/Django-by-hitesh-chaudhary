@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Blog
+{% endblock %}
+
+{% block content %}
+<h1> Blog : Django Course by- Hitesh Chaudhary</h1>
+<a href="/"><button>Home</button></a>
+
+<hr>
+
+  
+  <div style="border:2px solid white; margin:10px; padding:5px; display: flex;">
+    {% for list in blogs_list %}
+    <img src="{{list.Image.url}}", width="100">
+    <div style='margin:5px;'>
+      <h1>{{list.Title}}</h1>
+      <a href="{% url "blog_description" list.id %}">
+          <button type='button'>
+            Description
+          </button>
+
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+  
+
+{% endblock  %}
